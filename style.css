@@ -1,0 +1,150 @@
+/* Color Variables */
+:root {
+    --primary-navy: #0A192F;
+    --accent-orange: #FF6B35;
+    --bg-light: #F8F9FA;
+    --text-dark: #2C3E50;
+    --text-light: #E2E8F0;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', 'Apple SD Gothic Neo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--primary-navy);
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.accent {
+    color: var(--accent-orange);
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-orange);
+}
+
+/* Main Sections */
+main {
+    padding-top: 80px; /* 헤더 공간 확보 */
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: var(--primary-navy);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Products Grid */
+.product-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.module {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(10, 25, 47, 0.05);
+    flex: 1;
+    transition: transform 0.3s ease;
+}
+
+.module:hover {
+    transform: translateY(-10px);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary-navy);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    opacity: 0.1; /* 실제 이미지 삽입 시 제거 */
+}
+
+.module h3 {
+    color: var(--accent-orange);
+    margin-bottom: 15px;
+}
+
+/* Button */
+.cta-button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e55a2b;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-navy);
+    color: var(--text-light);
+    text-align: center;
+    padding: 30px;
+    font-size: 14px;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

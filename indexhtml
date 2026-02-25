@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Objet & Toy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">OBJET<span class="accent">.</span></div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#how-to-use">How to Use</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="fade-in">
+            <h2>About</h2>
+            <p>단순한 완구를 넘어, 당신의 공간에 영감을 불어넣는 현대적인 오브제를 제안합니다. <br>시각적인 즐거움과 만지는 촉각의 경험을 동시에 선사합니다.</p>
+        </section>
+
+        <section id="products">
+            <h2 class="fade-in">Products</h2>
+            <div class="product-grid">
+                <div class="module fade-in" id="module-a">
+                    <div class="image-placeholder"></div>
+                    <h3>Module A</h3>
+                    <p>창의력을 자극하는 기하학적 구조물</p>
+                </div>
+                <div class="module fade-in" id="module-b">
+                    <div class="image-placeholder"></div>
+                    <h3>Module B</h3>
+                    <p>빛과 그림자를 활용한 데스크 소품</p>
+                </div>
+                <div class="module fade-in" id="module-c">
+                    <div class="image-placeholder"></div>
+                    <h3>Module C</h3>
+                    <p>부드러운 질감이 돋보이는 모빌 오브제</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-to-use" class="fade-in">
+            <h2>How to Use</h2>
+            <p>정해진 규칙은 없습니다. 책상 위, 선반, 혹은 거실 테이블에 자유롭게 배치하여 <br>당신만의 새로운 공간 분위기를 연출해 보세요.</p>
+            <button class="cta-button">가이드 영상 보기</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 OBJET. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
