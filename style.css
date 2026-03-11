@@ -1,10 +1,10 @@
-/* 레퍼런스 기반 컬러 팔레트 */
+/* 기본 변수 (이전과 동일한 아트 감성 팔레트) */
 :root {
-    --bg-color: #EFEBE4; /* 따뜻하고 고급스러운 오프화이트/베이지 */
-    --text-main: #1A1A1A; /* 진한 먹색 */
-    --text-light: #5A5A5A; /* 보조 텍스트 */
-    --accent-red: #E63522; /* 강렬한 레드/다홍색 (레퍼런스 포인트 컬러) */
-    --line-color: #D3CFC9; /* 연한 그리드 라인 */
+    --bg-color: #EFEBE4; 
+    --text-main: #1A1A1A; 
+    --text-light: #5A5A5A; 
+    --accent-red: #E63522; 
+    --line-color: #D3CFC9; 
 }
 
 * {
@@ -17,7 +17,7 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    line-height: 1.5;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
@@ -36,12 +36,7 @@ header {
     border-bottom: 1px solid var(--line-color);
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
-
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
 .accent { color: var(--accent-red); }
 
 nav a {
@@ -50,190 +45,192 @@ nav a {
     margin-left: 40px;
     font-size: 1rem;
     font-weight: 700;
-    text-transform: lowercase; /* 레퍼런스처럼 소문자 폰트 */
+    text-transform: lowercase;
     transition: color 0.3s ease;
 }
-
 nav a:hover { color: var(--accent-red); }
 
-/* 공통 레이아웃 */
+/* 공통 섹션 레이아웃 (여백 대폭 확장!) */
 section {
-    padding: 150px 5vw 100px;
-    max-width: 1400px;
+    min-height: 100vh; /* 각 섹션이 최소 화면 한가득 차지하게 함 */
+    padding: 200px 5vw 150px; /* 위아래 스크롤 여유 공간 */
+    max-width: 1600px;
     margin: 0 auto;
     border-bottom: 1px solid var(--line-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 콘텐츠를 세로 중앙에 배치 */
 }
 
 h2 {
-    font-size: 4.5rem;
+    font-size: 5rem;
     font-weight: 900;
     color: var(--accent-red);
-    line-height: 0.9;
+    line-height: 0.85;
     letter-spacing: -2px;
     text-transform: lowercase;
 }
 
-/* 거대한 타이포그래피 (Hero) */
+/* 1. Hero 섹션 */
 .hero {
     position: relative;
-    padding-top: 200px;
-    height: 90vh;
-    display: flex;
-    align-items: center;
     border-bottom: none;
 }
 
 .giant-text {
-    font-size: 12vw;
+    font-size: 13vw;
     font-weight: 900;
-    line-height: 0.85;
+    line-height: 0.8;
     letter-spacing: -5px;
     position: absolute;
+    top: 30%;
     z-index: 2;
-    pointer-events: none;
+}
+
+/* 모든 이미지 박스 공통 스타일 */
+.hero-image-placeholder, .about-image-placeholder, .image-placeholder, .video-placeholder {
+    background: #E0DBD0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 1px dashed #B8B3A8;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
 }
 
 .hero-image-placeholder {
     position: absolute;
-    right: 10vw;
-    top: 30%;
-    width: 40vw;
-    height: 50vh;
-    background: linear-gradient(135deg, #FFB6B9 0%, #FAE3D9 100%);
-    border-radius: 40px; /* 레퍼런스 2의 둥근 느낌 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent-red);
-    font-weight: bold;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    right: 5vw;
+    top: 20%;
+    width: 45vw;
+    height: 65vh;
+    border-radius: 40px; 
 }
 
-/* 에디토리얼 그리드 (About, How to play) */
+/* 2. About 섹션 */
 .editorial-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 80px; /* 좌우 텍스트 간격 넓힘 */
     position: relative;
 }
 
 .red-circle {
-    width: 60px;
-    height: 60px;
+    width: 80px; height: 80px;
     background-color: var(--accent-red);
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
-
-.red-circle.small {
-    width: 30px;
-    height: 30px;
-    margin-top: 30px;
-}
+.red-circle.small { width: 30px; height: 30px; margin-top: 40px; }
 
 .text-area p.lead {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+.text-area p { font-size: 1.2rem; color: var(--text-light); }
+
+/* 라이프스타일 컷 거대 박스 */
+.about-image-placeholder {
+    width: 100%;
+    height: 70vh; /* 화면의 70% 높이를 차지 */
+    border-radius: 20px;
+    margin-top: 100px; /* 텍스트와 이미지 사이의 깊은 여백 */
 }
 
-.text-area p {
-    font-size: 1.1rem;
-    color: var(--text-light);
-}
-
-/* 모듈 섹션 (넘버링 강조) */
+/* 3. Modules 섹션 */
 .editorial-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 80px;
+    margin-bottom: 100px; /* 타이틀과 모듈 사이 여백 추가 */
+}
+
+.section-desc {
+    max-width: 400px;
+    font-size: 1.2rem;
+    text-align: right;
+    color: var(--text-light);
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 60px; /* 모듈 사이의 여유 */
 }
 
-.module {
-    position: relative;
-}
+.module { position: relative; }
 
 .module-number {
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: 900;
     color: var(--accent-red);
     line-height: 1;
     position: absolute;
-    top: -30px;
-    right: -10px;
+    top: -40px;
+    right: -20px;
     z-index: 2;
 }
 
 .image-placeholder.pill-shape {
     width: 100%;
-    height: 350px;
-    background-color: #E6E1D8;
-    border-radius: 200px 200px 0 0; /* 돔 형태의 모던한 모양 */
-    margin-bottom: 20px;
+    height: 450px; /* 모듈 이미지를 길쭉하게 확보 */
+    border-radius: 200px 200px 0 0; 
+    margin-bottom: 30px;
 }
 
-.module-text h4 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
+.module-text h4 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+.module-text p { color: var(--text-light); font-size: 1.1rem; }
 
-.module-text p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* How to play 섹션 */
+/* 4. How to play 섹션 */
 .steps-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px; /* 스텝별 간격 확보 */
 }
 
 .step {
     border-top: 2px solid var(--text-main);
-    padding-top: 15px;
+    padding-top: 20px;
+}
+.step h4 { font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; }
+.step p { font-size: 1.1rem; color: var(--text-light); }
+
+/* 영상 들어갈 거대 박스 (16:9 비율 유도) */
+.video-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 비디오 비율 강제 유지 */
+    border-radius: 20px;
+    margin-top: 120px; /* 텍스트와 영상 사이 여백 확보 */
+    background: #1A1A1A; /* 영상 박스는 돋보이게 블랙 처리 */
+    color: white;
 }
 
-.step h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-/* 버튼 */
-.cta-button {
-    background-color: transparent;
-    color: var(--accent-red);
-    border: 2px solid var(--accent-red);
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 50px;
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: var(--accent-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    margin-top: 20px;
-}
-
-.cta-button:hover {
-    background-color: var(--accent-red);
-    color: var(--bg-color);
 }
 
 /* 푸터 */
 footer {
     text-align: center;
-    padding: 60px;
-    font-size: 0.9rem;
+    padding: 80px;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-light);
 }
@@ -241,8 +238,8 @@ footer {
 /* 애니메이션 */
 .fade-in {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(60px); /* 나타나는 동선을 더 길게 */
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
