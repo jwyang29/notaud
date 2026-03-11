@@ -10,68 +10,94 @@
     <header>
         <div class="logo">AUD<span class="accent">.</span></div>
         <nav>
-            <a href="#about">About</a>
-            <a href="#modules">Modules</a>
-            <a href="#how-to-play">How to Play</a>
+            <a href="#about">about</a>
+            <a href="#modules">modules</a>
+            <a href="#how-to-play">how to play</a>
         </nav>
     </header>
 
     <main>
+        <section class="hero fade-in">
+            <h1 class="giant-text">feel<br>your<br>path<span class="accent">.</span></h1>
+            <div class="hero-image-placeholder">Hero Object Image</div>
+        </section>
+
         <section id="about" class="fade-in">
-            <h2>About</h2>
-            <p>Beyond a simple toy, <strong>AUD:silhouette</strong> is a modern interactive object that breathes inspiration into your space.<br>
-            Measuring just 60x60x60mm, this compact cube houses advanced photo interrupters and weight sensors that precisely track the steel marble's location.</p>
-            <p>Rely purely on your senses—distinct haptic vibrations will guide you, letting you feel the difference between the right path and a dead end.</p>
-            
+            <div class="editorial-grid">
+                <div class="title-area">
+                    <div class="red-circle"></div>
+                    <h2>about<br>silhouette</h2>
+                </div>
+                <div class="text-area">
+                    <p class="lead">Beyond a simple toy, <strong>AUD:silhouette</strong> is a modern interactive object that breathes inspiration into your space.</p>
+                    <p>Measuring just 60x60x60mm, this compact cube houses advanced photo interrupters and weight sensors that precisely track the steel marble's location. Rely purely on your senses—distinct haptic vibrations will guide you, letting you feel the difference between the right path and a dead end.</p>
+                </div>
+            </div>
         </section>
 
         <section id="modules">
-            <h2 class="fade-in">Interchangeable Modules</h2>
-            <p class="section-desc fade-in">Swap the inner modules to experience entirely different mechanics and haptic sensations.</p>
-            <div class="product-grid">
-                <div class="module fade-in" id="module-1">
-                    <div class="image-placeholder"></div>
-                    <h3>Module 01: The Labyrinth</h3>
-                    <p>Navigate the classic maze. Tilt the cube and rely on haptic cues to find the hidden exit through intricate corridors.</p>
-                </div>
-                <div class="module fade-in" id="module-2">
-                    <div class="image-placeholder"></div>
-                    <h3>Module 02: The Slider</h3>
-                    <p>Carve your own path. Slide the internal walls to open new routes and dynamically guide the marble through the shifting structure.</p>
-                </div>
-                <div class="module fade-in" id="module-3">
-                    <div class="image-placeholder"></div>
-                    <h3>Module 03: The Gear</h3>
-                    <p>Timing is everything. Feel the mechanical rhythm and carefully pass the marble through a series of interlocking, rotating gears.</p>
-                </div>
+            <div class="editorial-header fade-in">
+                <h2>modules</h2>
+                <p class="section-desc">Swap the inner modules to experience entirely different mechanics and haptic sensations.</p>
             </div>
             
+            <div class="product-grid">
+                <div class="module fade-in" id="module-1">
+                    <h3 class="module-number">1.</h3>
+                    <div class="image-placeholder pill-shape"></div>
+                    <div class="module-text">
+                        <h4>The Labyrinth</h4>
+                        <p>Navigate the classic maze. Tilt the cube and rely on haptic cues to find the hidden exit.</p>
+                    </div>
+                </div>
+                <div class="module fade-in" id="module-2">
+                    <h3 class="module-number">2.</h3>
+                    <div class="image-placeholder pill-shape"></div>
+                    <div class="module-text">
+                        <h4>The Slider</h4>
+                        <p>Carve your own path. Slide the internal walls to dynamically guide the marble.</p>
+                    </div>
+                </div>
+                <div class="module fade-in" id="module-3">
+                    <h3 class="module-number">3.</h3>
+                    <div class="image-placeholder pill-shape"></div>
+                    <div class="module-text">
+                        <h4>The Gear</h4>
+                        <p>Timing is everything. Feel the mechanical rhythm and pass through rotating gears.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="how-to-play" class="fade-in">
-            <h2>How to Play</h2>
-            <div class="steps-container">
-                <div class="step">
-                    <h4>1. Assemble</h4>
-                    <p>Choose your desired inner module and slide it seamlessly into the main outer case.</p>
+            <div class="editorial-grid">
+                <div class="title-area">
+                    <h2>how to<br>play</h2>
+                    <div class="red-circle small"></div>
                 </div>
-                <div class="step">
-                    <h4>2. Drop</h4>
-                    <p>Insert the steel marble into the starting point to activate the internal sensors.</p>
-                </div>
-                <div class="step">
-                    <h4>3. Feel</h4>
-                    <p>Tilt, slide, or rotate. Follow the haptic feedback—a smooth vibration means you are on the right track, while a sharp pulse warns of a dead end.</p>
+                <div class="steps-container">
+                    <div class="step">
+                        <h4>1. Assemble</h4>
+                        <p>Choose your desired inner module and slide it seamlessly into the main outer case.</p>
+                    </div>
+                    <div class="step">
+                        <h4>2. Drop</h4>
+                        <p>Insert the steel marble into the starting point to activate the internal sensors.</p>
+                    </div>
+                    <div class="step">
+                        <h4>3. Feel</h4>
+                        <p>Follow the haptic feedback—a smooth vibration means right, a sharp pulse warns of a dead end.</p>
+                    </div>
+                    <button class="cta-button">Watch Guide ➔</button>
                 </div>
             </div>
-            <br>
-            <button class="cta-button">Watch the Guide Video</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 AUD:silhouette. All rights reserved.</p>
+        <p>AUD:silhouette © 2026. All rights reserved.</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
