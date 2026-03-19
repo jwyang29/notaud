@@ -1,10 +1,14 @@
-/* 기본 변수 (이전과 동일한 아트 감성 팔레트) */
+/* Dreamy Palette Variables */
 :root {
-    --bg-color: #EFEBE4; 
-    --text-main: #1A1A1A; 
-    --text-light: #5A5A5A; 
-    --accent-red: #E63522; 
-    --line-color: #D3CFC9; 
+    --bg-grad-top: #D6Daf0;    /* Soft purple-blue */
+    --bg-grad-mid: #E8D5E3;    /* Dreamy transition */
+    --bg-grad-bot: #F8A07F;    /* Warm peach/orange */
+    --text-main: #3B374D;      /* Deep slate-blue for readability */
+    --text-light: #6B677D;     /* Softer text */
+    --accent-orange: #F57A59;  /* Vibrant accent from the poster */
+    --glass-bg: rgba(255, 255, 255, 0.35);
+    --glass-border: rgba(255, 255, 255, 0.6);
+    --line-color: rgba(255, 255, 255, 0.4); 
 }
 
 * {
@@ -15,7 +19,9 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    /* Full page dreamy gradient */
+    background: linear-gradient(160deg, var(--bg-grad-top) 0%, var(--bg-grad-mid) 40%, var(--bg-grad-bot) 100%);
+    background-attachment: fixed; /* Keeps gradient stationary while scrolling */
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -30,14 +36,15 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    background: rgba(239, 235, 228, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
-    border-bottom: 1px solid var(--line-color);
+    border-bottom: 1px solid var(--glass-border);
 }
 
-.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
-.accent { color: var(--accent-red); }
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.accent { color: var(--accent-orange); }
 
 nav a {
     color: var(--text-main);
@@ -48,27 +55,28 @@ nav a {
     text-transform: lowercase;
     transition: color 0.3s ease;
 }
-nav a:hover { color: var(--accent-red); }
+nav a:hover { color: var(--accent-orange); }
 
-/* 공통 섹션 레이아웃 (여백 대폭 확장!) */
+/* 공통 섹션 레이아웃 */
 section {
-    min-height: 100vh; /* 각 섹션이 최소 화면 한가득 차지하게 함 */
-    padding: 200px 5vw 150px; /* 위아래 스크롤 여유 공간 */
+    min-height: 100vh; 
+    padding: 200px 5vw 150px; 
     max-width: 1600px;
     margin: 0 auto;
     border-bottom: 1px solid var(--line-color);
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 콘텐츠를 세로 중앙에 배치 */
+    justify-content: center; 
 }
 
 h2 {
     font-size: 5rem;
     font-weight: 900;
-    color: var(--accent-red);
+    color: #FFFFFF;
     line-height: 0.85;
     letter-spacing: -2px;
     text-transform: lowercase;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* 1. Hero 섹션 */
@@ -85,21 +93,25 @@ h2 {
     position: absolute;
     top: 30%;
     z-index: 2;
+    color: var(--accent-orange); /* Matching the "play with vibe" text */
+    text-shadow: 0 10px 40px rgba(245, 122, 89, 0.2);
 }
 
-/* 모든 이미지 박스 공통 스타일 */
+/* Glassmorphism Image Boxes */
 .hero-image-placeholder, .about-image-placeholder, .image-placeholder, .video-placeholder {
-    background: #E0DBD0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-light);
+    color: var(--text-main);
     font-weight: bold;
     font-size: 1.1rem;
-    border: 1px dashed #B8B3A8;
-    box-shadow: 0 40px 80px rgba(0,0,0,0.06);
     transition: transform 0.3s ease;
 }
 
@@ -109,24 +121,25 @@ h2 {
     top: 20%;
     width: 45vw;
     height: 65vh;
-    border-radius: 40px; 
+    border-radius: 60px; 
 }
 
 /* 2. About 섹션 */
 .editorial-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px; /* 좌우 텍스트 간격 넓힘 */
+    gap: 80px; 
     position: relative;
 }
 
-.red-circle {
+.orange-circle {
     width: 80px; height: 80px;
-    background-color: var(--accent-red);
+    background: linear-gradient(135deg, #FFBFA8 0%, var(--accent-orange) 100%);
     border-radius: 50%;
     margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(245, 122, 89, 0.3);
 }
-.red-circle.small { width: 30px; height: 30px; margin-top: 40px; }
+.orange-circle.small { width: 30px; height: 30px; margin-top: 40px; }
 
 .text-area p.lead {
     font-size: 2.2rem;
@@ -137,12 +150,11 @@ h2 {
 }
 .text-area p { font-size: 1.2rem; color: var(--text-light); }
 
-/* 라이프스타일 컷 거대 박스 */
 .about-image-placeholder {
     width: 100%;
-    height: 70vh; /* 화면의 70% 높이를 차지 */
-    border-radius: 20px;
-    margin-top: 100px; /* 텍스트와 이미지 사이의 깊은 여백 */
+    height: 70vh; 
+    border-radius: 40px;
+    margin-top: 100px; 
 }
 
 /* 3. Modules 섹션 */
@@ -150,7 +162,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 100px; /* 타이틀과 모듈 사이 여백 추가 */
+    margin-bottom: 100px; 
 }
 
 .section-desc {
@@ -163,7 +175,7 @@ h2 {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px; /* 모듈 사이의 여유 */
+    gap: 60px; 
 }
 
 .module { position: relative; }
@@ -171,52 +183,51 @@ h2 {
 .module-number {
     font-size: 6rem;
     font-weight: 900;
-    color: var(--accent-red);
+    color: #FFFFFF;
     line-height: 1;
     position: absolute;
     top: -40px;
     right: -20px;
     z-index: 2;
+    text-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .image-placeholder.pill-shape {
     width: 100%;
-    height: 450px; /* 모듈 이미지를 길쭉하게 확보 */
-    border-radius: 200px 200px 0 0; 
+    height: 450px; 
+    border-radius: 200px 200px 40px 40px; /* More cloud-like/pill shape */
     margin-bottom: 30px;
 }
 
-.module-text h4 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; }
+.module-text h4 { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; color: var(--accent-orange); }
 .module-text p { color: var(--text-light); font-size: 1.1rem; }
 
 /* 4. How to play 섹션 */
 .steps-container {
     display: flex;
     flex-direction: column;
-    gap: 50px; /* 스텝별 간격 확보 */
+    gap: 50px; 
 }
 
 .step {
-    border-top: 2px solid var(--text-main);
+    border-top: 2px solid var(--glass-border);
     padding-top: 20px;
 }
 .step h4 { font-size: 1.8rem; font-weight: 700; margin-bottom: 10px; }
 .step p { font-size: 1.1rem; color: var(--text-light); }
 
-/* 영상 들어갈 거대 박스 (16:9 비율 유도) */
 .video-placeholder {
     width: 100%;
-    aspect-ratio: 16 / 9; /* 비디오 비율 강제 유지 */
-    border-radius: 20px;
-    margin-top: 120px; /* 텍스트와 영상 사이 여백 확보 */
-    background: #1A1A1A; /* 영상 박스는 돋보이게 블랙 처리 */
-    color: white;
+    aspect-ratio: 16 / 9; 
+    border-radius: 40px;
+    margin-top: 120px; 
 }
 
 .play-button {
     width: 80px;
     height: 80px;
-    background: var(--accent-red);
+    background: var(--accent-orange);
+    color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -224,7 +235,10 @@ h2 {
     font-size: 2rem;
     margin-bottom: 20px;
     cursor: pointer;
+    box-shadow: 0 10px 30px rgba(245, 122, 89, 0.4);
+    transition: transform 0.2s;
 }
+.play-button:hover { transform: scale(1.1); }
 
 /* 푸터 */
 footer {
@@ -235,14 +249,29 @@ footer {
     color: var(--text-light);
 }
 
-/* 애니메이션 */
+/* Animations */
 .fade-in {
     opacity: 0;
-    transform: translateY(60px); /* 나타나는 동선을 더 길게 */
+    transform: translateY(60px); 
     transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Floating Animations for the 3D Object feel */
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+.float-anim-delayed {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s; /* Creates an organic, staggered floating effect */
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
